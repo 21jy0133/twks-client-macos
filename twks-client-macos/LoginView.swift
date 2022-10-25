@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+// Capture part of the screen
 
 struct LoginView: View {
+    @EnvironmentObject var userState : UserState
+    
     @State private var username = ""
     @State private var password = ""
     
@@ -40,8 +43,16 @@ struct LoginView: View {
 
             guard let data = data else { return }
             do {
-                let object = try JSONSerialization.jsonObject(with: data, options: [])
-                print(object)
+                let objectJson = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, Any>
+                
+                
+                
+                let data = objectJson["data"] as! Dictionary<String, Any>
+                
+                userState.login(accessToken: data["accessToken"] as! String, refreshToken: data["refreshToken"] as! String)
+                
+                
+                print(objectJson)
             } catch let error {
                 print("error", error)
             }
@@ -55,7 +66,8 @@ struct LoginView: View {
             // Welcome
             VStack(spacing:15){
                 Text("Hello There")
-                Text(loginFailedMessage.description)
+                Text(UserDefaults.standard.string(forKey: "accessToken")!)
+                Text(String(userState.isLoginedIn))
                 Text("Please sign in to continue.")
             }
             .padding(.top,45)
@@ -93,7 +105,18 @@ struct LoginView: View {
             .padding(.horizontal,35)
             Button(action: {
                 
-                self.handleSignIn()
+                //self.handleSignIn()
+                
+                let task = Process()
+                task.launchPath = "/usr/sbin/screencapture"
+                var arguments = [String]()
+                arguments.append("-x")
+                let cacheURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
+                let cachePath = String(describing: cacheURL?.absoluteString)
+                print(cachePath)
+                arguments.append(cachePath + "/Screenshot111" + ".png")
+                task.arguments = arguments
+                task.launch()
                 
                 
             }) {

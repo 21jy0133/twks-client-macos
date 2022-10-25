@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8AA65CDD29042A580078CEB5 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 8AA65CDC29042A580078CEB5 /* SocketIO */; };
 		8AA65CDF2904D07E0078CEB5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA65CDE2904D07E0078CEB5 /* LoginView.swift */; };
+		8AA65CE32906241D0078CEB5 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA65CE22906241D0078CEB5 /* UserState.swift */; };
+		8AA65CE5290624AB0078CEB5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA65CE4290624AB0078CEB5 /* MainView.swift */; };
 		8AB2ABEF29018BDE008F1994 /* twksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB2ABEE29018BDE008F1994 /* twksApp.swift */; };
 		8AB2ABF329018BDE008F1994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB2ABF229018BDE008F1994 /* Assets.xcassets */; };
 		8AB2ABF629018BDE008F1994 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB2ABF529018BDE008F1994 /* Preview Assets.xcassets */; };
@@ -16,11 +18,13 @@
 
 /* Begin PBXFileReference section */
 		8AA65CDE2904D07E0078CEB5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		8AB2ABEB29018BDE008F1994 /* twks-client-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twks-client-macos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA65CE22906241D0078CEB5 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
+		8AA65CE4290624AB0078CEB5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8AB2ABEB29018BDE008F1994 /* twks-client-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "twks-client-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB2ABEE29018BDE008F1994 /* twksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twksApp.swift; sourceTree = "<group>"; };
 		8AB2ABF229018BDE008F1994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AB2ABF529018BDE008F1994 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8AB2ABF729018BDE008F1994 /* twks-client-macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = twks-client-macos.entitlements; sourceTree = "<group>"; };
+		8AB2ABF729018BDE008F1994 /* twks-client-macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "twks-client-macos.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +63,10 @@
 				8AB2ABF729018BDE008F1994 /* twks-client-macos.entitlements */,
 				8AB2ABF429018BDE008F1994 /* Preview Content */,
 				8AA65CDE2904D07E0078CEB5 /* LoginView.swift */,
+				8AA65CE22906241D0078CEB5 /* UserState.swift */,
+				8AA65CE4290624AB0078CEB5 /* MainView.swift */,
 			);
-			path = twks-client-macos;
+			path = "twks-client-macos";
 			sourceTree = "<group>";
 		};
 		8AB2ABF429018BDE008F1994 /* Preview Content */ = {
@@ -86,11 +92,11 @@
 			);
 			dependencies = (
 			);
-			name = twks-client-macos;
+			name = "twks-client-macos";
 			packageProductDependencies = (
 				8AA65CDC29042A580078CEB5 /* SocketIO */,
 			);
-			productName = twks-client-macos;
+			productName = "twks-client-macos";
 			productReference = 8AB2ABEB29018BDE008F1994 /* twks-client-macos.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -147,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA65CE32906241D0078CEB5 /* UserState.swift in Sources */,
+				8AA65CE5290624AB0078CEB5 /* MainView.swift in Sources */,
 				8AA65CDF2904D07E0078CEB5 /* LoginView.swift in Sources */,
 				8AB2ABEF29018BDE008F1994 /* twksApp.swift in Sources */,
 			);
@@ -273,7 +281,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = twks-client-macos/twks-client-macos.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "twks-client-macos/twks-client-macos.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -288,7 +296,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yue.twks-client-macos;
+				PRODUCT_BUNDLE_IDENTIFIER = "yue.twks-client-macos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -301,7 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = twks-client-macos/twks-client-macos.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "twks-client-macos/twks-client-macos.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -316,7 +324,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yue.twks-client-macos;
+				PRODUCT_BUNDLE_IDENTIFIER = "yue.twks-client-macos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
